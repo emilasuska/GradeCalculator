@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grade Calculator</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="w3-light-gray" onload="pageLoaded()">
+<h1 class="w3-center">Grade Calculator</h1>
+<table class="w3-auto">
+    <thead>
+    <tr>
+        <td>Category</td>
+        <td>Grade(s)</td>
+        <td>Weight</td>
+    </tr>
+    </thead>
+    <tbody id="rows">
+    </tbody>
+    <tfoot>
+    <tr>
+        <td>Current Average</td>
+        <td><input type="text" id="currentGrade" disabled></td>
+        <td></td>
+        <td><input type="button" value="Calculate" onclick="calculateCurrentGrade()"></td>
+    </tr>
+    <tr>
+        <td>Final Exam</td>
+        <td><input type="text" id="examGrade" disabled></td>
+        <td><input type="text" id="examWeight" size="4">%</td>
+        <td><input type="button" value="Calculate" onclick="calculateGradeNeeded()"></td>
+    </tr>
+    <tr>
+        <td>Desired Grade</td>
+        <td><input type="text" id="desiredGrade" onchange="dataChanged()"></td>
+        <td><input type="text" id="totalWeight" size="4" disabled>%</td>
+    </tr>
+    </tfoot>
+</table>
+
+<table hidden>
+    <tbody>
+    <tr id="templateRow">
+        <td><input type="text"></td>
+        <td><input type="text" onchange="dataChanged()"></td>
+        <td><input type="text" onchange="dataChanged()" size="4">%</td>
+        <td>
+            <input type="button" value="+" class="w3-button w3-circle w3-blue-grey" onclick="addRow(this)">
+            <input type="button" value="-" class="w3-button w3-circle w3-blue-grey" onclick="removeRow(this)">
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<br/>
+
+<div class="w3-center error">
+    <div id="gradeError" hidden>Grades must be between 0% and 100%.</div>
+    <div id="weightError" hidden>Weights must be between 0% and 100%.</div>
+    <div id="weightSumError" hidden>All weights must add up to 100%.</div>
+</div>
+
+<br/>
+
+<h2 class="w3-center">Legend</h2>
+<table class="w3-auto">
+    <tbody>
+    <tr>
+        <td><div class="w3-tag grade90">&nbsp;</div> 90 and above</td>
+    </tr>
+    <tr>
+        <td><div class="w3-tag grade80">&nbsp;</div> 80–89</td>
+    </tr>
+    <tr>
+        <td><div class="w3-tag grade70">&nbsp;</div> 70–79</td>
+    </tr>
+    <tr>
+        <td><div class="w3-tag grade60">&nbsp;</div> 60–69</td>
+    </tr>
+    <tr>
+        <td><div class="w3-tag grade50">&nbsp;</div> 50–59</td>
+    </tr>
+    <tr>
+        <td><div class="w3-tag grade00">&nbsp;</div> <50</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

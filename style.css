@@ -1,0 +1,44 @@
+table {
+    border-collapse: collapse;
+}
+
+td {
+    padding: 8px;
+}
+
+input {
+    font-family: monospace;
+}
+
+.w3-button {
+    font-weight: bold;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+.grade90 {
+    background-color: limegreen;
+}
+
+.grade80 {
+    background-color: greenyellow;
+}
+
+.grade70 {
+    background-color: yellow;
+}
+
+.grade60 {
+    background-color: #ffdd00;
+}
+
+.grade50 {
+    background-color: darkorange;
+}
+
+.grade00 {
+    background-color: red;
+}
